@@ -1,0 +1,109 @@
+.slider {
+    position: relative;
+    margin: -5px;
+
+    .swiper-container {
+        padding: 5px;
+    }
+
+    .swiper-pagination{
+
+        bottom: -20px;
+        left: 50%;
+        transform: translate(-50%, 100%);
+    
+        @media (max-width:$md6+px) {
+            bottom: -2px;
+        }
+    }
+
+    .swiper-button-prev{
+        left: -30px;
+        transform: translate(-100%);
+    
+        @media (max-width:$md0+px) {
+            left: 10px;
+            transform: none;
+        }
+    }
+    
+    .swiper-button-next{
+        right: -30px;
+        transform: translate(100%);
+    
+        @media (max-width:$md0+px) {
+            right: 10px;
+            transform: none;
+        }
+    
+        &:after{
+            transform: translate(-40%, -50%);
+        }
+    }
+
+    &__slide {
+        position: relative;
+        font-size: 0;
+        color: $color_text;
+        box-shadow: $shadow_elem;
+        border-radius: 5px;
+        overflow: hidden;
+
+        @media (max-width:$md7+px) {
+            height: 150px!important;
+        }
+
+        img{
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: left;
+        }
+    }
+
+    &__content {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        max-width: 55%;
+
+        @media (max-width:$md6+px) {
+            top: 15px;
+            left: 10px;
+        }
+    }
+
+    &__title {
+        font-family: Comfortaa;
+        font-weight: bold;
+        font-size: 48px;
+        line-height: 130%;
+
+        @media (max-width:$md2+px) {
+            font-size: 36px;
+        }
+
+        @media (max-width:$md4+px) {
+            font-size: 24px;
+        }
+
+        @media (max-width:$md6+px) {
+            font-size: 18px;
+        }
+    }
+
+    &__subtitle {
+        font-size: 28px;
+        line-height: 130%;
+        margin: 10px 0 0 0;
+
+        @media (max-width:$md4+px) {
+            font-size: 18px;
+        }
+
+        @media (max-width:$md6+px) {
+            font-size: 18px;
+        }
+    }
+}

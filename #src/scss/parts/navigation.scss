@@ -1,0 +1,149 @@
+
+.navigation {
+    &__overlay {
+        position: fixed;
+        background: black;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        z-index: 1000;
+        pointer-events: none;
+        transition: opacity 0.5s;
+
+        .active &{
+            pointer-events: initial;
+            opacity: 0.65;
+        }
+    }
+
+    &__container {
+        position: relative;
+        z-index: 10;
+        padding: 20px 20px 20px 10px;
+        display: inline-flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1050;
+        height: 100vh;
+        background: $color_white;
+        transform: translate(-120%);
+        transition: transform 0.3s;
+        box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.25);
+        overflow: auto;
+
+        box-sizing: border-box;
+
+        @media (max-width:$md7+px) {
+            padding: 10px;
+        }
+    
+
+        .active &{
+            transform: none;
+        }
+
+        min-width: 35%;
+
+        @media (max-width:$md6+px) {
+            width: 100%;
+        }
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+    }
+
+    &__burger {
+        margin-right: 20px;
+    }
+
+    &__logo {
+    }
+
+    &__body{
+        display: flex;
+        flex-direction: column;
+        margin: 40px 0 0 0;
+    }
+    
+    nav{
+        margin: 0 0 40px 10px;
+
+        &:before{
+            content:attr(data-title);
+            font-family: Comfortaa;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 18px;
+        }
+    }
+
+    .menu{
+        flex-direction: column;
+        margin: 20px 0 ;
+
+
+        li{
+            max-height: 20px;
+            transition: max-height 0.8s;
+            overflow: hidden;
+            padding: 10px 0;
+
+            &:not(:last-child){
+                border-bottom: 1px solid rgb(201, 201, 201);
+            }
+
+            a{
+                font-family: $font;
+                font-size: 14px;
+
+                display: flex;
+
+                &:after{
+                    transition: transform 0.6s;
+                }
+            }
+
+            &.menu-item-has-children{
+                /*>a:after{
+                    transform: rotate(0deg);
+                }
+
+                &.active{
+                    >a:after{
+                        transform: rotate(-90deg) scale(1.5);
+                    }
+                }*/
+
+                a:after{
+                    margin-left: auto;
+                    margin-right: 10px;
+                }
+            }
+
+            &.active{
+                overflow: hidden;
+                max-height: 999px;
+                >a{
+                    font-weight: bold;
+                }
+                >.sub-menu{
+                    display: flex;
+                }
+            }
+        }
+
+        .sub-menu{
+            padding: 10px 0 0 10px;
+            margin: 0;
+        }
+    }
+    
+}

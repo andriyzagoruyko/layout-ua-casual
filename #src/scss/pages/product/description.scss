@@ -1,0 +1,128 @@
+.additional{
+    width: 100%;
+    display: flex;
+
+    margin: 60px 0 0 0;
+
+    @media (max-width:$md2+px) {
+        flex-direction: column;
+    }
+
+    @media (max-width:$md4+px) {
+        margin: 30px 0 0 0;
+    }
+
+    &__desc{
+        flex: 0 0 45%;
+
+        .section__body{
+            margin: 0;
+        }
+
+        .colapsed{
+            &__elem {
+                max-height: 105px;
+            }
+        }
+
+        .desctiption {
+            margin: 0 0 30px 0;
+
+            &__wrapper{
+                @media (max-width:$md6+px) {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+
+            &__text {
+                margin: 25px 0 10px 0;
+            }
+
+            p{
+                line-height: 23px;
+
+                &:first-child{
+                    margin-top: 0;
+                }
+
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .properties {
+            margin: 40px 0 0 0;
+
+            .colapsed{
+                &__elem {
+                    max-height: 210px;
+                }
+            }
+            
+            &__wrapper{
+                @media (max-width:$md6+px) {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+
+            &__list {
+                margin: 1em 0;
+                
+                li{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    line-height: 16px;
+                    
+                    &:not(:last-child){
+                        margin: 0 0 15px 0;
+                    }
+
+                    span{
+                        &:first-child{
+                            color: $color_grey;
+                            flex: 1 1 auto;
+                            position: relative;
+                            display: flex;
+                            padding: 0 10px 0 0 ;
+                            white-space: nowrap;
+
+                            &:after{
+                                content: '';
+                                border-bottom: 1px dashed #ccc;
+                                display: block;
+                                height: 15px;
+                                width: 100%;
+                                margin: 0px 15px;
+                            }
+                        }
+                        &:last-child{
+                            width: 33%;
+                            line-height: 130%;
+                            overflow-wrap: break-word;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__crossale{
+        max-width: calc(55% - 80px);
+        margin: 0 0 0 80px;
+
+        position: relative;
+        align-self: flex-start;
+
+        @media (max-width:$md2+px) {
+            max-width: 100%;
+            margin: 60px 0 0 0;
+        }
+
+    }
+}

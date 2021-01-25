@@ -1,0 +1,28 @@
+@import "libs/_normalize";
+@import "libs/_lightgallery";
+@import "libs/_lg-transitions";
+@import "libs/_jquery.scrollbar";
+
+@import "common/vars";
+@import "common/utils";
+@import "common/fonts";
+
+$md0: 1480;
+$md1: 1290;
+$md2: 1170;
+$md3: 1020;
+$md4: 850;
+$md5: 768;
+$md6: 650;
+$md7: 480;
+$md8: 350;
+
+$font: Arial, Helvetica, sans-serif;
+
+@import "common/ui";
+@import "parts/header";
+@import "parts/navigation";
+@import "parts/footer";
+@import "main-page";
+@import "catalog-page";
+@import "product-page";

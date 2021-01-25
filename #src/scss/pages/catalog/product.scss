@@ -1,0 +1,221 @@
+.price{
+    font-family: Comfortaa;
+    font-weight: 300;
+
+    ins{
+        text-decoration: none;
+        font-weight: bold;
+    }
+}
+
+.products-carousel {
+    width: 100%;
+
+    .section__body{
+        margin: 10px -20px -20px -20px;
+    }
+
+    .products-slider{
+        padding: 20px;
+    }
+}
+
+.products-slider {
+
+    display: flex;
+    align-items: flex-start;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 100%;
+
+    &:not(.swiper-container-initialized){
+        display: none;
+    }
+    
+    .swiper-slide{
+        align-self: flex-start;
+        width: auto;
+    }
+
+    .swiper-button-disabled{
+        opacity: 0!important;
+    }
+
+    .swiper-button-prev,.swiper-button-next{
+        @media (max-width:$md3+px ) {
+            display: none;
+        }
+        opacity: 1;
+        transition: opacity 0.3s;
+    }
+
+    .swiper-button-prev{
+        left: 0;
+        transform: translate(-60%);
+
+        @media (max-width:$md1+70+px ) {
+            transform: translate(-10px);
+        }
+    }
+    
+    .swiper-button-next{
+        right: 0;
+        transform: translate(60%);
+
+        @media (max-width:$md1+70+px ) {
+            transform: translate(10px);
+        }
+    }
+
+    &__wrapper {
+    }
+}
+
+.product-small{
+    &:hover{
+        img{
+            box-shadow: $shadow_elem_hover;
+        }
+    }
+
+    &__img {
+        position: relative;
+
+        img{
+            max-width: 100%;
+            display: block;
+            border-radius: 5px;
+            box-shadow: $shadow_elem;
+            transition: box-shadow 0.4s;
+        }
+    }
+
+    &__label {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: translateY(30%);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        .label{
+            //padding: 5px 8px;
+            width: 40px;
+            height: 20px;
+        }
+    }
+
+    &__price {
+        margin: 15px 0 0 0;
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 16px;
+        del{
+            margin: 0 10px 0 0;
+        }
+    }
+
+    &__title {
+        margin: 5px 0 0 0;
+        white-space: nowrap;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        font-size: 14px;
+        display: flex;
+
+        &:after{
+            content: '';
+            width: 30px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: linear-gradient(270deg, $color_mainbackground 18%, rgba(255, 255, 255, 0) 138%);
+            pointer-events: none;
+        }
+
+        a{
+
+            &:hover{
+                color: $color_darkbrown;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+
+.mobile-panel{
+    &-bottom{
+        @media (max-width:$md4+px) {
+            border-top: solid 1px grey;
+            box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.4);
+        }
+    }
+
+    @media (max-width:$md4+px) {
+        padding: 5px 10px;
+        background: $color_darkgrey;
+        background: linear-gradient(270deg, #4A4949 0%, #393939 48.66%, #4A4949 94.01%);
+        color: $color_white;
+    }
+
+    &__icon{
+        width: 25px;
+        height: 25px;
+    }
+
+    &__button{
+        display: none;
+        border-radius: 5px;
+        transition: all 0.3s;
+        align-items: center;
+
+        &.active{
+            background: $color_grey;
+            box-shadow: inset 2px 2px 5px black;
+        }
+
+        span{
+            @media (max-width:$md7+px) {
+                display: none;
+            }
+        }
+
+        &-md2{
+            @media (max-width:$md2+px) {
+                display: flex;
+                background: $color_darkgrey;
+                color:$color_white;
+                padding: 10px 15px;
+            }
+        }
+
+        @media (max-width:$md4+px) {
+            display: flex;
+            padding: 10px;
+            background: transparent;
+    
+            -webkit-tap-highlight-color: transparent;
+    
+            a, a:before{
+                color:$color_white!important;
+                -webkit-tap-highlight-color: transparent;
+            }
+        }
+    }
+}
+
+.remove-padding{
+    @media (max-width:$md4+px) {
+        margin-left: -20px!important;
+        margin-right: -20px!important;
+    }
+
+    @media (max-width:$md7+px) {
+        margin-left: -10px!important;
+        margin-right: -10px!important;
+    }
+}

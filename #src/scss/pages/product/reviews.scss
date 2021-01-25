@@ -1,0 +1,153 @@
+.reviews {
+    display: flex;
+    flex-direction: column;
+    order: 2;
+
+    @media (max-width:$md4+px) {
+        order: 0;
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: solid 1px $color_midlegrey;
+        flex-wrap: wrap-reverse;
+    }
+    
+    &__button{
+        align-self:  flex-start;
+        margin: 40px 0 0 0;
+
+        @media (max-width:$md4+px) {
+            margin: 30px auto 0 auto;
+        }
+    }
+
+    nav{
+        @media (max-width:$md6+px) {
+            width: 100%;
+        }
+    }
+
+    &__tabs {
+        display: flex;
+        position: relative;
+        top: 1px;
+        margin: 5px 0 0 0;
+
+        @media (max-width:$md6+px) {
+            width: 100%;
+        }
+
+        li{
+            margin: 0 30px 0 0;
+            color: $color_grey;
+            line-height: 44px;
+            cursor: pointer;
+            
+            &.active{
+                border-bottom: solid 2px $color_darkbrown;
+                color: $color_text;
+            }
+
+            @media (max-width:$md6+px) {
+                flex: 0 0 50%;
+                margin: 0;
+                text-align: center;
+            }
+        }
+    }
+    
+    &__tab{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .review {
+        padding: 40px 0;
+        display: flex;
+        flex-direction: column;
+
+        @media (max-width:$md4+px) {
+            padding: 30px 0;
+        }
+
+        &:not(:last-child){
+            border-bottom: solid 1px $color_midlegrey;
+        }
+
+
+        &__header {
+            display: flex;
+            span{
+                font-weight: bold;
+                line-height: 15px;
+                margin: 0 5px 0 0;
+            }
+
+            .rating{
+                margin: 5px 0 0 0;
+            }
+
+            time{
+                line-height: 15px;
+                font-size: 15px;
+                color: $color_grey;
+            }
+        }
+
+        &__img{
+            margin: 0 15px 0 0;
+            align-self: flex-start;
+            position: relative;
+            width: 50px;
+
+            @media (max-width:$md6+px) {
+                margin: 0 10px 0 0;
+                width: 40px;
+            }
+
+            img{
+                display: block;
+                opacity: 0.4;
+                width: 100%;
+                position: absolute;
+                left: 0;
+                top: 0;
+
+                @media (max-width:$md4+px) {
+                    position: static;
+                }
+                
+            }
+        }
+
+        &__body {
+            display: flex;
+            flex-direction: column;
+            padding-left: 65px;
+
+            @media (max-width:$md4+px) {
+                padding-left: 0;
+            }
+
+            .review{
+                border-bottom: none;
+                padding: 10px 0 10px 10px;
+                margin: 10px 0 0 0;
+                background: white;
+                box-shadow: $shadow_elem;
+                border-radius: 5px;
+
+                
+                .review__body{
+                    padding: 0;
+                }
+            }
+        }
+
+    }
+
+}

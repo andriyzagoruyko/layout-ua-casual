@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script type="text/javascript" src="js/script.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <title>Ua Casual</title>
+</head>
+<body class="catalog">
+    <div class="site">
+
+        @@include('layout/header.html'})
+
+        <main class="site__main">
+            <div class="site__container container">
+                <div class="site__breadcrumbs">
+                    <div class="breadcrumbs">
+                        <span><a href="/">Главная</a></span>
+                        <span><a href="/catalog.html">Каталог</a></span>
+                        <span><a href="#">Мужчинам</a></span>
+                        <span><a href="#">Одежда</a></span>
+                        <span><a href="#">Брюки</a></span>
+                    </div>
+                </div>
+
+                <div class="catalog-header mobile-panel">
+                    <div class="catalog-header__button catalog-header__button-back mobile-panel__button"><i class="icon icon-back"></i></div>
+                    <div class="catalog-header__title title"><h1>Мужские брюки</h1></div>
+                    <span>9675 товаров</span>
+                </div>
+
+                <div class="site__products catalog">
+                    <aside class="catalog__sidebar catalog-sidebar" data-current-block>
+                        <div class="catalog-sidebar__header">
+                            <div class="catalog-sidebar__close close close-white">
+                            </div>
+                            <span id="sidebar-title">Фильтр</span>
+                            <div class="catalog-sidebar__reset">Сбросить все</div>
+                        </div>
+                        <div id="sidebar_category" data-title="Категории" class="catalog-sidebar__block catalog-sidebar__categories sidebar-menu">
+                            <ul class="sidebar-menu__list">
+                                <li class="haschild selected opened">
+                                    <a href="#" class="mobile-panel mobile-panel-bottom"> <i class="icon icon-back"></i> Одежда</a>
+                                    <ul>
+                                        <li class="haschild selected opened">
+                                            <a href="#">Брюки</a>
+                                            <ul>
+                                                <li class="display-all"><a href="#">Показать все</a></li>
+                                                <li class="hasnochild"><a href="#">Багги</a></li>
+                                                <li class="selected hasnochild"><a href="#">Джоггеры</a></li>
+                                                <li class="hasnochild"><a href="#">Джинсы</a></li>
+                                                <li class="hasnochild"><a href="#">Домашние</a></li>
+                                                <li class="hasnochild"><a href="#">Зауженные</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div id="sidebar_filter" data-title="Фильтр" class="catalog-sidebar__block catalog-sidebar__filter filter">
+                            <div class="filter__block filter-block" data-type="checklist">
+                                <div class="filter-block__header">
+                                    <div class="filter-block__title">Бренд</div>
+                                    <a href="#" class="filter-block__reset dashed-link">Сбросить</a>
+                                </div>
+                                <div class="filter-block__wrapper">
+                                    <div class="filter-block__body">
+                                        <fieldset>
+                                            <label class="filter-block__item filter-block__item-check">BROCLOTHING (2)</label>
+                                            <label class="filter-block__item filter-block__item-check">A.S.A.P.  (20)</label>
+                                            <label class="filter-block__item filter-block__item-check">Absolut Joy (1)</label>
+                                            <label class="filter-block__item filter-block__item-check">adidas (53)</label>
+                                            <label class="filter-block__item filter-block__item-check">Alvaro Maligno (11)</label>
+                                            <label class="filter-block__item filter-block__item-check">AnyMalls (4)</label>
+                                            <label class="filter-block__item filter-block__item-check">Alvaro Maligno (11)</label>
+                                            <label class="filter-block__item filter-block__item-check">Alvaro Maligno (11)</label>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="filter__block filter-block" data-type="price">
+                                <div class="filter-block__header">
+                                    <div class="filter-block__title">Цена</div>
+                                    <a href="#" class="filter-block__reset dashed-link">Сбросить</a>
+                                </div>
+                                <div class="filter-block__wrapper">
+                                    <div class="filter-block__body">
+                                        <div class="filter-block__price-range" data-min="200"  data-max="900">
+                                            <div> 
+                                                <label>От</label>
+                                                <div class="filter-block__price start">
+                                                    <input class="price-input" name="start_price" type="text" value="200">
+                                                </div>
+                                            </div>
+                                            <div> 
+                                                <label>До</label>
+                                                <div class="filter-block__price end">
+                                                    <input class="price-input" name="end_price" type="text" value="900">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="filter__block filter-block" data-type="color">
+                                <div class="filter-block__header">
+                                    <div class="filter-block__title">Цвет</div>
+                                    <a href="#" class="filter-block__reset dashed-link">Сбросить</a>
+                                </div>
+                                <div class="filter-block__wrapper filter-block__colors-wrapper">
+                                    <div class="filter-block__body">
+                                        <div class="filter-block__colors colors">
+                                            <a href="#" class="colors__item colors__item-blue"></a>
+                                            <a href="#" class="colors__item colors__item-red"></a>
+                                            <a href="#" class="colors__item colors__item-yellow"></a>
+                                            <a href="#" class="colors__item colors__item-violet"></a>
+                                            <a href="#" class="colors__item colors__item-blue"></a>
+                                            <a href="#" class="colors__item colors__item-red"></a>
+                                            <a href="#" class="colors__item colors__item-yellow"></a>
+                                            <a href="#" class="colors__item colors__item-violet"></a>
+                                            <a href="#" class="colors__item colors__item-blue"></a>
+                                            <a href="#" class="colors__item colors__item-red"></a>
+                                            <a href="#" class="colors__item colors__item-yellow"></a>
+                                            <a href="#" class="colors__item colors__item-violet"></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="filter__block filter-block" data-type="checklist">
+                                <div class="filter-block__header">
+                                    <div class="filter-block__title">Размер</div>
+                                    <a href="#" class="filter-block__reset dashed-link">Сбросить</a>
+                                </div>
+                                <div class="filter-block__wrapper">
+                                    <div class="filter-block__body">
+                                        <fieldset>
+                                            <label class="filter-block__item filter-block__item-check">XXS</label>
+                                            <label class="filter-block__item filter-block__item-check">XS</label>
+                                            <label class="filter-block__item filter-block__item-check">L</label>
+                                            <label class="filter-block__item filter-block__item-check">XL</label>
+                                            <label class="filter-block__item filter-block__item-check">XXL</label>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="filter__block filter-block" data-type="checklist">
+                                <div class="filter-block__header">
+                                    <div class="filter-block__title">Состав</div>
+                                    <a href="#" class="filter-block__reset dashed-link">Сбросить</a>
+                                </div>
+                                <div class="filter-block__wrapper">
+                                    <div class="filter-block__body">
+                                        <fieldset>
+                                            <label class="filter-block__item filter-block__item-check">акрил (71)</label>
+                                            <label class="filter-block__item filter-block__item-check">ацетат (14)</label>
+                                            <label class="filter-block__item filter-block__item-check">бамбук (5)</label>
+                                            <label class="filter-block__item filter-block__item-check">виски (1)</label>
+                                            <label class="filter-block__item filter-block__item-check">вискоза (3449)</label>
+                                            <label class="filter-block__item filter-block__item-check">высокопрочная ткань (3)</label>
+                                            <label class="filter-block__item filter-block__item-check">полиэстер уретан акрилат бла бла бла (1)</label>
+                                            <label class="filter-block__item filter-block__item-check">вискоза (3449)</label>
+                                            <label class="filter-block__item filter-block__item-check">вискоза (3449)</label>
+
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="catalog-sidebar__buttons">
+                            <div class="catalog-sidebar__accept">Показать</div>
+                        </div>
+                    </aside>
+
+                    <div class="catalog__layout products-section">
+                        <div class="products-section__orderby orderby mobile-panel mobile-panel-bottom">
+                            <div class="orderby__item">
+                                <div class="orderby__select">
+                                    <span>Сортировать по: </span>
+                                    <div class="orderby__button orderby__button-list mobile-panel__button "><i class="mobile-panel__icon"></i><a href="#">Популярности</a></div>
+                                    <ul class="orderby__list">
+                                        <li class="active"><a href="#" class="dashed-link">Популярности</a></li>
+                                        <li><a href="#" class="dashed-link">Рейтингу</a></li>
+                                        <li><a href="#" class="dashed-link">Цене</a></li>
+                                        <li><a href="#" class="dashed-link">Скидке</a></li>
+                                        <li><a href="#" class="dashed-link">Обновлению</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="orderby__item">
+                                <div class="orderby__button orderby__button-category mobile-panel__button mobile-panel__button-md2" data-sidebar-button="sidebar_category">
+                                    <i class="mobile-panel__icon"></i><span>Категории</span>
+                                </div>
+                                <div class="orderby__button orderby__button-filter mobile-panel__button mobile-panel__button-md2" data-sidebar-button="sidebar_filter">
+                                    <i class="mobile-panel__icon"></i><span>Фильтр</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-section__category-carousel cat-carousel">
+                            <div class="cat-carousel__slider">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide"><div class="cat-carousel__slide"><a href="#">Багги</a> </div></div>
+                                    <div class="swiper-slide"><div class="cat-carousel__slide"><a href="#">Джоггеры</a> </div></div>
+                                    <div class="swiper-slide"><div class="cat-carousel__slide"><a href="#">Джинсы</a> </div></div>
+                                    <div class="swiper-slide"><div class="cat-carousel__slide"><a href="#">Зауженные</a> </div></div>
+                                    <div class="swiper-slide"><div class="cat-carousel__slide"><a href="#">Багги</a> </div></div>
+                                    <div class="swiper-slide"><div class="cat-carousel__slide"><a href="#">Джоггеры</a> </div></div>
+                                    <div class="swiper-slide"><div class="cat-carousel__slide"><a href="#">Джинсы</a> </div></div>
+                                    <div class="swiper-slide"><div class="cat-carousel__slide"><a href="#">Зауженные</a> </div></div>
+                                    <div class="swiper-slide"><div class="cat-carousel__slide"><a href="#">Багги</a> </div></div>
+                                    <div class="swiper-slide"><div class="cat-carousel__slide"><a href="#">Джоггеры</a> </div></div>
+                                    <div class="swiper-slide"><div class="cat-carousel__slide"><a href="#">Джинсы</a> </div></div>
+                                    <div class="swiper-slide"><div class="cat-carousel__slide"><a href="#">Зауженные</a> </div></div>
+                                </div>
+                            </div>
+                            <span>9675 товаров</span>
+                        </div>
+                        <div class="products-section__wrapper">
+                            @@include('layout/catalog/item.html', {"img": "01.jpg"})
+                            @@include('layout/catalog/item.html', {"img": "02.jpg"})
+                            @@include('layout/catalog/item.html', {"img": "04.jpg"})
+                            @@include('layout/catalog/item.html', {"img": "01.jpg"})
+                            @@include('layout/catalog/item.html', {"img": "01.jpg"})
+                            @@include('layout/catalog/item.html', {"img": "02.jpg"})
+                            @@include('layout/catalog/item.html', {"img": "04.jpg"})
+                            @@include('layout/catalog/item.html', {"img": "01.jpg"})
+                            @@include('layout/catalog/item.html', {"img": "01.jpg"})
+                            @@include('layout/catalog/item.html', {"img": "02.jpg"})
+                            @@include('layout/catalog/item.html', {"img": "04.jpg"})
+                            @@include('layout/catalog/item.html', {"img": "01.jpg"})
+                            @@include('layout/catalog/item.html', {"img": "01.jpg"})
+                            @@include('layout/catalog/item.html', {"img": "02.jpg"})
+                            @@include('layout/catalog/item.html', {"img": "04.jpg"})
+                            @@include('layout/catalog/item.html', {"img": "01.jpg"})
+                            @@include('layout/catalog/item.html', {"img": "01.jpg"})
+                            @@include('layout/catalog/item.html', {"img": "02.jpg"})
+                            @@include('layout/catalog/item.html', {"img": "04.jpg"})
+                            @@include('layout/catalog/item.html', {"img": "01.jpg"})
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+        @@include('layout/footer.html'})
+
+    </div>
+    
+    @@include('layout/sticky-buttons.html'})
+
+</body>
+</html>
