@@ -4,6 +4,7 @@ $(function () {
     if ($breadcrumbs.length) {
         setTimeout(function () {
             let width = 0;
+
             $breadcrumbs.find(">span").each(function () {
                 width += $(this).width();
             })
@@ -14,5 +15,4 @@ $(function () {
             }
         }, 400)
     }
-
-})
+});

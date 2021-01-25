@@ -2659,8 +2659,6 @@ $.magnificPopup.registerModule(RETINA_NS, {
     }
 }));
 ;
-
-
 ;
 const browser = {
 	Android: function() {return navigator.userAgent.match(/Android/i);},
@@ -2674,9 +2672,8 @@ const browser = {
 const isMobile = browser.isMobile();
 
 $(function(){
-
-    var lastTouchTime = 0;
-    var $body = document.body;
+    const lastTouchTime = 0;
+    const $body = document.body;
 
     $body.classList.add(isMobile?"touch":"mouse");
     
@@ -2690,7 +2687,6 @@ $(function(){
     }
     
     function touchMove() {
-    
         lastTouchTime = new Date();
 
         if ($body.classList.contains("touch")) return;
@@ -2712,7 +2708,7 @@ function scrollToElem($elem, offset = 0, onStop){
 }
 
 function getChildrenHeight($parent){
-    let $children = $parent.children();
+    const $children = $parent.children();
     let height = 0;
     
     $children.each(function(){
@@ -2725,7 +2721,6 @@ function getChildrenHeight($parent){
 Math.clip = function(number, min, max) {
     return Math.max(min, Math.min(number, max));
 };
-
 
 $(function(){
     $(document).on("mouseover", ".menu-header__link", function(){
@@ -2995,7 +2990,7 @@ $(function () {
 });
 
 ;
-
+;
 
 $(function(){
     if (isMobile) return;
@@ -3326,48 +3321,48 @@ $(function(){
         });
     })
 });
-;
+;;
+$(function () {
+    $(document).on("click", ".header__nav-search", function (e) {
+        const $target = $(e.target);
 
-$(function(){
-    $(document).on("click", ".header__nav-search", function(e){
-        let $target = $(e.target);
-        if ($target.parent("a").length || $target.is("a")){
+        if ($target.parent("a").length || $target.is("a")) {
             e.preventDefault();
             $(this).toggleClass("active");
         }
     });
 
-    $(document).mouseup(function (e){ 
-        let $header_search = $(".header__nav-search");
+    $(document).mouseup(function (e) {
+        const $header_search = $(".header__nav-search");
 
-		if (!$header_search.is(e.target) 
-            && $header_search.has(e.target).length === 0) {
-                $header_search.removeClass("active");
-		}
+        if (!$header_search.is(e.target) && $header_search.has(e.target).length === 0) {
+            $header_search.removeClass("active");
+        }
     });
 });
 
 ;
 
-$(function() {  
+$(function () {
     $('.buble-hover')
-    .on('mouseenter', function(e) {
+        .on('mouseenter', function (e) {
+            if ($("body").hasClass("mouse")) {
+                const parentOffset = $(this).offset(),
+                    relX = e.pageX - parentOffset.left,
+                    relY = e.pageY - parentOffset.top;
 
-            if (!$("body").hasClass("mouse")) return;
+                $(this).find('span').css({ top: relY, left: relX })
+            }
+        })
+        .on('mouseout', function (e) {
+            if ($("body").hasClass("mouse")) {
+                const parentOffset = $(this).offset(),
+                    relX = e.pageX - parentOffset.left,
+                    relY = e.pageY - parentOffset.top;
 
-            var parentOffset = $(this).offset(),
-            relX = e.pageX - parentOffset.left,
-            relY = e.pageY - parentOffset.top;
-            $(this).find('span').css({top:relY, left:relX})
-    })
-    .on('mouseout', function(e) {
-        if (!$("body").hasClass("mouse")) return;
-        
-        var parentOffset = $(this).offset(),
-        relX = e.pageX - parentOffset.left,
-        relY = e.pageY - parentOffset.top;
-        $(this).find('span').css({top:relY, left:relX})
-    });
+                $(this).find('span').css({ top: relY, left: relX })
+            }
+        });
 });;
 $(function () {
     let $breadcrumbs = $(".breadcrumbs");
@@ -3375,6 +3370,7 @@ $(function () {
     if ($breadcrumbs.length) {
         setTimeout(function () {
             let width = 0;
+
             $breadcrumbs.find(">span").each(function () {
                 width += $(this).width();
             })
@@ -3385,26 +3381,23 @@ $(function () {
             }
         }, 400)
     }
-
-});
+});;
 $(function () {
     $("[data-tabid]").on("click", function (e) {
-        let $tab = $(this);
-        let $tabs_block = $tab.closest(".tabs");
-        let $tabs = $tabs_block.find("[data-tab]");
+        const $tab = $(this);
+        const $tabs_block = $tab.closest(".tabs");
+        const $tabs = $tabs_block.find("[data-tab]");
+        const tabIndex = $tab.parent("ul").children().index($tab);
 
         $tabs_block.find(".active").removeClass("active");
-
-        let tabIndex = $tab.parent("ul").children().index($tab);
-
         $tab.addClass("active");
         $($tabs[tabIndex]).addClass("active");
     });
 });;
 $(function () {
     $(".colapsed__link").on("click", function () {
-        let $collapsed = $(this).closest(".colapsed");
-        let $collapsed_elem = $collapsed.find(".colapsed__elem");
+        const $collapsed = $(this).closest(".colapsed");
+        const $collapsed_elem = $collapsed.find(".colapsed__elem");
 
         if (!$collapsed.hasClass("active")) {
             $collapsed.addClass("active");
@@ -3417,9 +3410,9 @@ $(function () {
     })
 
     $("a").on("click", function (e) {
-        let $link = $(this);
-        let attrHref = $link.attr("href");
-        let attrModal = $link.attr("data-modal");
+        const $link = $(this);
+        const attrHref = $link.attr("href");
+        const attrModal = $link.attr("data-modal");
 
         if (attrHref[0] == "#") {
             e.preventDefault();
@@ -3430,4 +3423,4 @@ $(function () {
         }
     })
 });;
-
+;

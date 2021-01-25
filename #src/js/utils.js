@@ -7,7 +7,7 @@ function scrollToElem($elem, offset = 0, onStop){
 }
 
 function getChildrenHeight($parent){
-    let $children = $parent.children();
+    const $children = $parent.children();
     let height = 0;
     
     $children.each(function(){

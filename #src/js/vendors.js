@@ -5,5 +5,3 @@
 @@include('vendors/lightgallery.min.js');
 @@include('vendors/lg-zoom.min.js');
 @@include('vendors/jquery.scrollbar.js');
-
-

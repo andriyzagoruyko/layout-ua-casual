@@ -1,7 +1,7 @@
 $(function () {
     $(".colapsed__link").on("click", function () {
-        let $collapsed = $(this).closest(".colapsed");
-        let $collapsed_elem = $collapsed.find(".colapsed__elem");
+        const $collapsed = $(this).closest(".colapsed");
+        const $collapsed_elem = $collapsed.find(".colapsed__elem");
 
         if (!$collapsed.hasClass("active")) {
             $collapsed.addClass("active");
@@ -14,9 +14,9 @@ $(function () {
     })
 
     $("a").on("click", function (e) {
-        let $link = $(this);
-        let attrHref = $link.attr("href");
-        let attrModal = $link.attr("data-modal");
+        const $link = $(this);
+        const attrHref = $link.attr("href");
+        const attrModal = $link.attr("data-modal");
 
         if (attrHref[0] == "#") {
             e.preventDefault();

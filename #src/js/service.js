@@ -10,9 +10,8 @@ const browser = {
 const isMobile = browser.isMobile();
 
 $(function(){
-
-    var lastTouchTime = 0;
-    var $body = document.body;
+    const lastTouchTime = 0;
+    const $body = document.body;
 
     $body.classList.add(isMobile?"touch":"mouse");
     
@@ -26,7 +25,6 @@ $(function(){
     }
     
     function touchMove() {
-    
         lastTouchTime = new Date();
 
         if ($body.classList.contains("touch")) return;
