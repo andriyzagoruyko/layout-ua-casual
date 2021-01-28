@@ -1,4 +1,8 @@
 $(function () {
+    if (!$('body').hasClass('single-product')) {
+        return;
+    }
+
     new Swiper('.single-gallery__thumbnails-nav', {
         slidesPerView: 4,
         direction: 'vertical',
@@ -12,9 +16,7 @@ $(function () {
             disabledClass: "disabled",
         },
     });
-});
 
-$(function () {
     const galery = new Swiper('.single-gallery__image', {
         speed: 400,
         loop: true,

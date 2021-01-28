@@ -2661,39 +2661,39 @@ $.magnificPopup.registerModule(RETINA_NS, {
 ;
 ;
 const browser = {
-	Android: function() {return navigator.userAgent.match(/Android/i);},
-	BlackBerry: function() {return navigator.userAgent.match(/BlackBerry/i);},
-	iOS: function() {return navigator.userAgent.match(/iPhone|iPad|iPod/i);},
-	Opera: function() {return navigator.userAgent.match(/Opera Mini/i);},
-	Windows: function() {return navigator.userAgent.match(/IEMobile/i);},
-	isMobile: function() {return (browser.Android() || browser.BlackBerry() || browser.iOS() || browser.Opera() || browser.Windows());}
+    Android: function () { return navigator.userAgent.match(/Android/i); },
+    BlackBerry: function () { return navigator.userAgent.match(/BlackBerry/i); },
+    iOS: function () { return navigator.userAgent.match(/iPhone|iPad|iPod/i); },
+    Opera: function () { return navigator.userAgent.match(/Opera Mini/i); },
+    Windows: function () { return navigator.userAgent.match(/IEMobile/i); },
+    isMobile: function () { return (browser.Android() || browser.BlackBerry() || browser.iOS() || browser.Opera() || browser.Windows()); }
 };
 
 const isMobile = browser.isMobile();
 
-$(function(){
-    const lastTouchTime = 0;
+$(function () {
+    let lastTouchTime = 0;
     const $body = document.body;
 
-    $body.classList.add(isMobile?"touch":"mouse");
-    
+    $body.classList.add(isMobile ? "touch" : "mouse");
+
     function mouseMove() {
         if (new Date() - lastTouchTime < 500) return;
 
         if ($body.classList.contains("mouse")) return;
-    
+
         $body.classList.remove("touch");
         $body.classList.add("mouse");
     }
-    
+
     function touchMove() {
         lastTouchTime = new Date();
 
         if ($body.classList.contains("touch")) return;
-    
+
         $body.classList.replace('mouse', 'touch');
     }
-    
+
     $body.addEventListener('touchstart', touchMove, true);
     $body.addEventListener('mousemove', mouseMove, true);
 });
@@ -2875,6 +2875,10 @@ $(function(){
 });
 ;
 $(function () {
+    if (!$('body').hasClass('single-product')) {
+        return;
+    }
+
     new Swiper('.single-gallery__thumbnails-nav', {
         slidesPerView: 4,
         direction: 'vertical',
@@ -2888,9 +2892,7 @@ $(function () {
             disabledClass: "disabled",
         },
     });
-});
 
-$(function () {
     const galery = new Swiper('.single-gallery__image', {
         speed: 400,
         loop: true,
@@ -3300,26 +3302,24 @@ $(function(){
         $(".catalog-sidebar").toggleClass("sidebar-filter-selected", isSelected);
     }
 });;
-$(function(){
-    $(window).on("load", function(){
-        new Swiper('.cat-carousel__slider', {
-            speed: 400,
-            loop: false,
-            spaceBetween: 10,
-            slidesPerView: 'auto',
-            freeMode: true,
-            pagination: {
-                el: '.swiper-pagination',
-                type: 'bullets',
-                clickable: true,
-                dynamic: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-        });
-    })
+$(function () {
+    new Swiper('.cat-carousel__slider', {
+        speed: 400,
+        loop: false,
+        spaceBetween: 10,
+        slidesPerView: 'auto',
+        freeMode: true,
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+            clickable: true,
+            dynamic: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
 });
 ;;
 $(function () {
